@@ -34,12 +34,12 @@ class LinkedList:
             while (aux != None):
                 auxAcento = unidecode(aux.data.lower())
                 if auxAcento == removerAcento:
-                    return print("\nO filme procurado, '{}', se encontra na posição {}.".format(aux.data, i))
+                    return print(f"\nO filme procurado, '{aux.data}', se encontra na posição {i}.")
                 aux = aux.next
                 i = i + 1
-            raise ValueError("{} não se encontra na lista atual.".format(elemento))
+            raise ValueError(f"{elemento} não se encontra na lista atual.")
         except ValueError as erroUsuario:
-            print("\nERRO: {}".format(erroUsuario))
+            print(f"\nERRO: {erroUsuario}")
 
     # removendo elemento da lista
     def remover(self, elemento):
@@ -80,7 +80,7 @@ class LinkedList:
         display = 0
         while display < qtdfilmes:
             if this_filme != None:
-                print("• {}".format(this_filme.data))
+                print(f"• {this_filme.data}")
                 display += 1
             if this_filme == self.last:
                 this_filme = self.first
@@ -126,14 +126,14 @@ if __name__ == '__main__':
             lista.inserir(elemento)
             print("\n...Inserindo filme...\n")
             time.sleep(1)
-            print("Filme '{}' inserido com sucesso!".format(elemento))
+            print(f"Filme '{elemento}' inserido com sucesso!")
 
         elif opcao == 2:
             elemento = input("Digite o nome do filme que deseja remover: ")
             try:
                 removido = lista.remover(elemento)
                 if removido:
-                    print('\nFilme removido: {}'.format(elemento))
+                    print(f'\nFilme removido: {elemento}')
                 else:
                     print('\nEsse filme não existe na lista atual.')
             except ValueError as erroUsuario:
@@ -153,7 +153,7 @@ if __name__ == '__main__':
             print(lista.__repr__())
 
         elif opcao == 6:
-            print("\nA lista tem {} filme(s).".format(lista.size))
+            print(f"\nA lista tem {lista.size} filme(s).")
 
         elif opcao == 0:
             print("*---" * 10, end="*")
