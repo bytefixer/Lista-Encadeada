@@ -1,6 +1,7 @@
 import time
 from unidecode import unidecode
 
+
 class Node:
     def __init__(self, data):
         self.data = data
